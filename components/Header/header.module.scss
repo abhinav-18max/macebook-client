@@ -1,4 +1,28 @@
-.header{
-    text-align: center;
-    margin-top: 1.5rem;
+@import "/styles/variables";
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: $color-primary;
+    color: $color-white;
+    
+    a{
+        text-decoration: none;
+    }
+}
+
+.navbarNav{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;  
+    padding: 0;
+    margin: 0;
+}
+
+.navbarLink{
+    &:not(:last-child){
+        margin-right: 1rem;
+    }
 }
