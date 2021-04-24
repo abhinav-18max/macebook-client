@@ -65,7 +65,8 @@ router.post('/login', (req, res) => {
     res.setHeader('Set-Cookie', cookie.serialize('auth', generateToken(user), {
         httpOnly: true,
         path: '/',
-        domain: 'localhost'
+        domain: 'localhost',
+        expires: new Date(Date.now() + 6.048e+8)
     }))
     res.status(200).json({username})
 })
@@ -90,6 +91,16 @@ router.get('/messages', auth, (req, res) => {
 
 router.get('/notifications', auth, (req, res) => {
   res.status(200).json({test: "test"})
+})
+
+router.get('/logout', auth, (req, res) => {
+  res.setHeader('Set-Cookie', cookie.serialize('auth', 'deleted', {
+    httpOnly: true,
+    path: '/',
+    domain: 'localhost',
+    expires: new Date(Date.now())
+  }))
+  res.status(200).send()
 })
 
 module.exports = router

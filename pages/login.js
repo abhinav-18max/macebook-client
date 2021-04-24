@@ -23,6 +23,7 @@ const Login = () => {
             }
             if(res.status == 200){
                 console.log("You're Logged In!")
+                localStorage.setItem('macebook-isauth', true)
                 return router.push(`/user/${user.username}`)
             }
             console.log("Failed to login!")

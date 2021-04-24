@@ -4,14 +4,14 @@ import SEO from '../../components/seo'
 import styles from '../../styles/pages/profile.module.scss'
 
 const UserProfile = (props) => {
-    const router = useRouter()
-    const {username} = router.query
+    // const router = useRouter()
     const user = props.user
+    console.log(user)
     return(
         <Layout>
-            <SEO title={`${username} | Macebook`}/>
+            <SEO title={`${user.name} | Macebook`}/>
             <img src={user.picture}></img>
-            <h1>{user.username}</h1>
+            <h1>{user.name}</h1>
             <address>
                 <p>{user.email}</p>
                 <p>{user.phone}</p>
