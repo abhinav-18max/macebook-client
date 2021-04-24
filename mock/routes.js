@@ -46,7 +46,7 @@ router.get('/users', auth, (req, res) => {
 
 router.get('/users/:username', auth, (req, res) => {
     const {username} = req.params
-    const user = users.results.find(user => user.username == username)
+    const user = users.find(user => user.username == username)
 
     if(!user) return res.status(404).send()
 
