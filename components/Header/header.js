@@ -9,7 +9,7 @@ const Header = () => {
                 <li className={styles.navbarLink}><Link href="/feeds"><a>Home</a></Link></li>
                 <li className={styles.navbarLink}><Link href="/messaging"><a>Messaging</a></Link></li>
                 <li className={styles.navbarLink}><Link href="/notifications"><a>Notifications</a></Link></li>
-                <li className={styles.navbarLink}><Link href="/user/username"><a>User Icon</a></Link></li>
+                <li className={styles.navbarLink}><Link href="/profile"><a>User Icon</a></Link></li>
             </ul>
         </nav>
     )
