@@ -40,6 +40,17 @@ export async function getServerSideProps(ctx){
         ctx.res.end()
         return {props:{}}
     }
+
+    if(res.status === 404 && !ctx.req){
+        Router.replace('/404')
+        return {props:{}}
+    }
+
+    if(res.status === 404 && ctx.req){
+        ctx.res.writeHead(301, {Location: 'http://localhost:3000/404'})
+        ctx.res.end()
+        return {props:{}}
+    }
     
     const user = await res.json()
     return{

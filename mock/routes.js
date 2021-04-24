@@ -80,4 +80,16 @@ router.get('/profile', auth, (req, res) => {
     res.status(200).json(user)
 })
 
+router.get('/feeds', auth, (req, res) => {
+  res.status(200).json({test: "test"})
+})
+
+router.get('/messages', auth, (req, res) => {
+  res.status(200).json({test: "test"})
+})
+
+router.get('/notifications', auth, (req, res) => {
+  res.status(200).json({test: "test"})
+})
+
 module.exports = router
