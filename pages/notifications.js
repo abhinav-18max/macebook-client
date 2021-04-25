@@ -3,16 +3,12 @@ import SEO from '../components/seo'
 import Router from 'next/router'
 import styles from '../styles/pages/notifications.module.scss'
 
-const Notifications = (props) => {
+const Notifications = ({notifications}) => {
     return(
         <Layout>
             <SEO title="Notifications | Macebook"/>
             <h1>Notifications</h1>
-            <div>Notification 1</div>
-            <div>Notification 2</div>
-            <div>Notification 3</div>
-            <div>Notification 4</div>
-            <div>Notification 5</div>
+            {notifications.map((n, idx) => <div key={idx}>{n}</div>)}
         </Layout>
     )
 }
@@ -30,12 +26,20 @@ Notifications.getInitialProps = async (ctx) => {
     }
 
     if(res.status === 401 && ctx.req){
-        ctx.res.writeHead(301, {Location: 'http://localhost:3000/login'})
+        ctx.res.writeHead(301, {Location: '/login'})
         ctx.res.end()
         return {}
     }
-    
-    return {}
+
+    return {
+        notifications: [
+            "notification 1",
+            "notification 2",
+            "notification 3",
+            "notification 4",
+        ]
+    }
 }
+
 
 export default Notifications

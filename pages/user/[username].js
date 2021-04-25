@@ -6,7 +6,6 @@ import styles from '../../styles/pages/profile.module.scss'
 const UserProfile = (props) => {
     // const router = useRouter()
     const user = props.user
-    console.log(user)
     return(
         <Layout>
             <SEO title={`${user.name} | Macebook`}/>
@@ -36,7 +35,7 @@ export async function getServerSideProps(ctx){
     }
 
     if(res.status === 401 && ctx.req){
-        ctx.res.writeHead(301, {Location: 'http://localhost:3000/login'})
+        ctx.res.writeHead(301, {Location: '/login'})
         ctx.res.end()
         return {props:{}}
     }
@@ -47,7 +46,7 @@ export async function getServerSideProps(ctx){
     }
 
     if(res.status === 404 && ctx.req){
-        ctx.res.writeHead(301, {Location: 'http://localhost:3000/404'})
+        ctx.res.writeHead(301, {Location: '/404'})
         ctx.res.end()
         return {props:{}}
     }

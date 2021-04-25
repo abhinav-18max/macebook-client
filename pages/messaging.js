@@ -3,16 +3,12 @@ import SEO from '../components/seo'
 import Router from 'next/router'
 import styles from '../styles/pages/messaging.module.scss'
 
-const Messaging = (props) => {
+const Messaging = ({messages}) => {
     return(
         <Layout>
             <SEO title="Messaging | Macebook"/>
             <h1>Messaging</h1>
-            <div>Message 1</div>
-            <div>Message 2</div>
-            <div>Message 3</div>
-            <div>Message 4</div>
-            <div>Message 5</div>
+            {messages.map((m, idx) => <div key={idx}>{m}</div>)}
         </Layout>
     )
 }
@@ -30,12 +26,19 @@ Messaging.getInitialProps = async (ctx) => {
     }
 
     if(res.status === 401 && ctx.req){
-        ctx.res.writeHead(301, {Location: 'http://localhost:3000/login'})
+        ctx.res.writeHead(301, {Location: '/login'})
         ctx.res.end()
         return {}
     }
     
-    return {}
+    return {
+        messages: [
+            "message 1",
+            "message 2",
+            "message 3",
+            "message 4",
+        ]
+    }
 }
 
 export default Messaging

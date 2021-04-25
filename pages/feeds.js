@@ -3,16 +3,12 @@ import SEO from '../components/seo'
 import Router from 'next/router'
 import styles from '../styles/pages/feeds.module.scss'
 
-const Feeds = (props) => {
+const Feeds = ({feeds}) => {
     return(
         <Layout>
             <SEO title="Feeds | Macebook"/>
             <h1>Feeds</h1>
-            <div>Feed 1</div>
-            <div>Feed 2</div>
-            <div>Feed 3</div>
-            <div>Feed 4</div>
-            <div>Feed 5</div>
+            {feeds.map((f, idx) => <div key={idx}>{f}</div>)}
         </Layout>
     )
 }
@@ -30,12 +26,19 @@ Feeds.getInitialProps = async (ctx) => {
     }
 
     if(res.status === 401 && ctx.req){
-        ctx.res.writeHead(301, {Location: 'http://localhost:3000/login'})
+        ctx.res.writeHead(301, {Location: '/login'})
         ctx.res.end()
         return {}
     }
     
-    return {}
+    return {
+        feeds: [
+            "feed 1",
+            "feed 2",
+            "feed 3",
+            "feed 4",
+        ]
+    }
 }
 
 export default Feeds

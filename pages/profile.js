@@ -1,7 +1,6 @@
 import Router from "next/router"
 
 const Profile = () => {
-    console.log(document.cookie)
     return null
 }
 
@@ -18,7 +17,7 @@ Profile.getInitialProps = async (ctx) => {
     }
 
     if(res.status === 401 && ctx.req){
-        ctx.res.writeHead(301, {Location: 'http://localhost:3000/login'})
+        ctx.res.writeHead(301, {Location: '/login'})
         ctx.res.end()
         return {}
     }
@@ -30,7 +29,7 @@ Profile.getInitialProps = async (ctx) => {
     } 
 
     if(ctx.req){
-        ctx.res.writeHead(301, {Location: `http://localhost:3000/user/${user.username}`})
+        ctx.res.writeHead(301, {Location: `/user/${user.username}`})
         ctx.res.end()
     }
 
