@@ -1,17 +1,16 @@
 import {useState} from 'react'
 import SEO from '../components/seo'
 import Layout from '../components/Layout/layout'
-import {useRouter} from 'next/router'
+import Router from 'next/router'
 
 const Login = () => {
-    const router = useRouter()
     const [username, updateUsername] = useState("charlotteli")
     const [password, updatePassword] = useState("charlotteli") 
 
     const handleClick = async (e) => {
         e.preventDefault()
         try {
-            const res = await fetch('http://localhost:5001/api/login', {
+            const res = await fetch(`${process.env.API}/api/login`, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({username, password}),
@@ -24,7 +23,8 @@ const Login = () => {
             if(res.status == 200){
                 console.log("You're Logged In!")
                 localStorage.setItem('macebook-isauth', true)
-                return router.push(`/user/${user.username}`)
+                // return router.push(`/user/${user.username}`)
+                return Router.replace('/feeds')
             }
             console.log("Failed to login!")
         } catch (error) {

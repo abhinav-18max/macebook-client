@@ -18,7 +18,7 @@ const Header = () => {
         if(localStorage.getItem('macebook-isauth')){
             localStorage.removeItem('macebook-isauth')
         }
-        const res = await fetch('http://localhost:5001/api/logout', {
+        const res = await fetch(`${process.env.API}/api/logout`, {
             method: 'GET',
             credentials: 'include'
         })
@@ -36,6 +36,7 @@ const Header = () => {
                 <li className={styles.navbarLink}><Link href="/messaging"><a>Messaging</a></Link></li>
                 <li className={styles.navbarLink}><Link href="/notifications"><a>Notifications</a></Link></li>
                 <li className={styles.navbarLink}><Link href="/profile"><a>User Icon</a></Link></li>
+                <li className={styles.navbarLink}><Link href="/settings"><a>Settings</a></Link></li>
                 <li className={styles.navbarLink} onClick={handleLogout}>Logout</li>
             </ul> :
             <div>

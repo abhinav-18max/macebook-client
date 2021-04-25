@@ -7,7 +7,7 @@ const Messaging = (props) => {
     return(
         <Layout>
             <SEO title="Messaging | Macebook"/>
-            <div>Messaging</div>
+            <h1>Messaging</h1>
             <div>Message 1</div>
             <div>Message 2</div>
             <div>Message 3</div>
@@ -18,7 +18,7 @@ const Messaging = (props) => {
 }
 
 Messaging.getInitialProps = async (ctx) => {
-    const res = await fetch('http://localhost:5001/api/messages', {
+    const res = await fetch(`${process.env.API}/api/messages`, {
         method: 'GET',
         credentials: 'include',
         headers: ctx.req ? {cookie: ctx.req.headers.cookie} : undefined

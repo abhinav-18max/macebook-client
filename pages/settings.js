@@ -5,7 +5,7 @@ const Settings = (props) => {
     return(
         <Layout>
             <SEO title="Settings | Macebook"/>
-            <div>Settings</div>
+            <h1>Settings</h1>
         </Layout>
     )
 }

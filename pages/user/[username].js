@@ -24,7 +24,7 @@ const UserProfile = (props) => {
 export async function getServerSideProps(ctx){
     const cookie = ctx.req.headers.cookie
 
-    const res = await fetch(`http://localhost:5001/api/users/${ctx.params.username}`, {
+    const res = await fetch(`${process.env.API}/api/users/${ctx.params.username}`, {
         headers: {
             cookie
         }

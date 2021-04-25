@@ -7,7 +7,7 @@ const Notifications = (props) => {
     return(
         <Layout>
             <SEO title="Notifications | Macebook"/>
-            <div>Notifications</div>
+            <h1>Notifications</h1>
             <div>Notification 1</div>
             <div>Notification 2</div>
             <div>Notification 3</div>
@@ -18,7 +18,7 @@ const Notifications = (props) => {
 }
 
 Notifications.getInitialProps = async (ctx) => {
-    const res = await fetch('http://localhost:5001/api/notifications', {
+    const res = await fetch(`${process.env.API}/api/notifications`, {
         method: 'GET',
         credentials: 'include',
         headers: ctx.req ? {cookie: ctx.req.headers.cookie} : undefined
