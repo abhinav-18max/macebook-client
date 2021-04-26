@@ -14,7 +14,7 @@ const Feeds = ({feeds}) => {
 }
 
 Feeds.getInitialProps = async (ctx) => {
-    const res = await fetch(`${process.env.API}/api/feeds`, {
+    const res = await fetch(`${process.env.API}/feeds`, {
         method: 'GET',
         credentials: 'include',
         headers: ctx.req ? {cookie: ctx.req.headers.cookie} : undefined

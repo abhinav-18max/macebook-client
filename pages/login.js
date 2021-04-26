@@ -10,25 +10,24 @@ const Login = () => {
     const handleClick = async (e) => {
         e.preventDefault()
         try {
-            const res = await fetch(`${process.env.API}/api/login`, {
+            const res = await fetch(`${process.env.API}/login`, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({username, password}),
                 credentials: 'include'
             })
-            const user = await res.json()
-            if(res.status == 404){
-                return console.log("Invalid Username or Password")
+    
+            if(res.status == 404 || res.status == 401){
+                return alert("Invalid Username or Password")
             }
+    
             if(res.status == 200){
                 console.log("You're Logged In!")
                 localStorage.setItem('macebook-isauth', true)
-                // return router.push(`/user/${user.username}`)
                 return Router.replace('/feeds')
             }
-            console.log("Failed to login!")
         } catch (error) {
-            console.log("Failed to login!")
+            console.log("Server not responding!")
         }
     }
 

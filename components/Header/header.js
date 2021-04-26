@@ -18,7 +18,7 @@ const Header = () => {
         if(localStorage.getItem('macebook-isauth')){
             localStorage.removeItem('macebook-isauth')
         }
-        const res = await fetch(`${process.env.API}/api/logout`, {
+        const res = await fetch(`${process.env.API}/logout`, {
             method: 'GET',
             credentials: 'include'
         })

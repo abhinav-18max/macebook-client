@@ -14,7 +14,7 @@ const Notifications = ({notifications}) => {
 }
 
 Notifications.getInitialProps = async (ctx) => {
-    const res = await fetch(`${process.env.API}/api/notifications`, {
+    const res = await fetch(`${process.env.API}/notifications`, {
         method: 'GET',
         credentials: 'include',
         headers: ctx.req ? {cookie: ctx.req.headers.cookie} : undefined

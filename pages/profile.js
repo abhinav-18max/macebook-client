@@ -5,7 +5,7 @@ const Profile = () => {
 }
 
 Profile.getInitialProps = async (ctx) => {
-    const res = await fetch(`${process.env.API}/api/profile`, {
+    const res = await fetch(`${process.env.API}/profile`, {
         method: 'GET',
         credentials: 'include',
         headers: ctx.req ? {cookie: ctx.req.headers.cookie} : undefined

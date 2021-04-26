@@ -6,7 +6,7 @@ export default function Home() {
   return(
     <Layout>
       <SEO title="Macebook"/>
-      <div className={styles.heading}>MACE Alumini Portal</div>
+      <div className={styles.heading}>MACE Alumni Portal</div>
     </Layout>
   )
 }
