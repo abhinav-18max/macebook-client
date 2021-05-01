@@ -2,14 +2,16 @@ import {useState, useEffect} from 'react'
 import SEO from '../components/seo'
 import Layout from '../components/Layout/layout'
 import {useAuth} from '../contexts/authContext'
-import {clientRedirect} from '../lib/redirect'
+import {clientRedirect, serverRedirect} from '../lib/redirect'
 
 const Login = () => {
     const [username, updateUsername] = useState("charlotteli")
     const [password, updatePassword] = useState("charlotteli") 
     const [user, setUser] = useAuth()
 
-    useEffect(() => {if(user) clientRedirect('/feeds')}, [user])
+    useEffect(() => {
+        if(user) clientRedirect('/feeds')
+    }, [user])
 
     const handleClick = async (e) => {
         e.preventDefault()
@@ -60,6 +62,22 @@ const Login = () => {
             </form>
         </Layout>
     )
+}
+
+Login.getInitialProps = async (ctx) => {
+    if(ctx.res){
+        const res = await fetch(`${process.env.API}/feeds`, {
+            method: 'GET',
+            credentials: 'include',
+            headers: ctx.req ? {cookie: ctx.req.headers.cookie} : undefined
+        })
+
+        if(res.ok){
+            serverRedirect(ctx, '/feeds')
+            return {}
+        }
+    }
+    return {}
 }
 
 export default Login

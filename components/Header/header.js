@@ -1,7 +1,5 @@
-import {useState, useEffect} from 'react'
 import Link from 'next/link'
 import styles from './header.module.scss'
-import Router from 'next/router'
 import { useAuth } from '../../contexts/authContext'
 import { clientRedirect } from '../../lib/redirect'
 
@@ -32,6 +30,7 @@ const Header = () => {
             <div>
                 <ul className={styles.navbarNav}>
                     <li className={styles.navbarLink}><Link href="/login"><a>Login</a></Link></li>
+                    <li className={styles.navbarLink}><Link href="/registration"><a>Register</a></Link></li>
                 </ul>
             </div>}
         </nav>
