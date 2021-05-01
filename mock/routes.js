@@ -69,7 +69,7 @@ router.post('/login', (req, res) => {
         domain: 'localhost',
         expires: new Date(Date.now() + 6.048e+8)
     }))
-    res.status(200).json({username})
+    res.status(200).json({user})
 })
 
 router.get('/profile', auth, (req, res) => {

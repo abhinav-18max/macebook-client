@@ -1,47 +1,36 @@
-import {useState, useEffect} from 'react'
 import Link from 'next/link'
 import styles from './header.module.scss'
-import Router from 'next/router'
+import { useAuth } from '../../contexts/authContext'
+import { clientRedirect } from '../../lib/redirect'
 
 const Header = () => {
-    const [isAtuenticated, setIsAtuenticated] = useState(false)
-
-    useEffect(async () => {
-        if(localStorage.getItem('macebook-isauth')){
-            setIsAtuenticated(true)
-        }else{
-            setIsAtuenticated(false)
-        }
-    })
+    const [user, setUser] = useAuth()
 
     const handleLogout = async () => {
-        if(localStorage.getItem('macebook-isauth')){
-            localStorage.removeItem('macebook-isauth')
-        }
         const res = await fetch(`${process.env.API}/logout`, {
             method: 'GET',
             credentials: 'include'
         })
-        console.log(res)
-        Router.replace('/')
-        return
+        setUser()
+        clientRedirect('/')
     }
 
     return(
         <nav className={styles.navbar}>
             <Link href="/"><a className={styles.navbarBrand}>Logo</a></Link>
-            {isAtuenticated ? 
+            {user ? 
             <ul className={styles.navbarNav}>
                 <li className={styles.navbarLink}><Link href="/feeds"><a>Home</a></Link></li>
                 <li className={styles.navbarLink}><Link href="/messaging"><a>Messaging</a></Link></li>
                 <li className={styles.navbarLink}><Link href="/notifications"><a>Notifications</a></Link></li>
-                <li className={styles.navbarLink}><Link href="/profile"><a>User Icon</a></Link></li>
                 <li className={styles.navbarLink}><Link href="/settings"><a>Settings</a></Link></li>
-                <li className={styles.navbarLink} onClick={handleLogout}>Logout</li>
+                <li className={styles.navbarLink} onClick={handleLogout}><a>Logout</a></li>
+                <li className={styles.navbarLink}><Link href={`/user/${user.username}`}><a><img className={styles.picture} src={user.picture}/></a></Link></li>
             </ul> :
             <div>
                 <ul className={styles.navbarNav}>
                     <li className={styles.navbarLink}><Link href="/login"><a>Login</a></Link></li>
+                    <li className={styles.navbarLink}><Link href="/registration"><a>Register</a></Link></li>
                 </ul>
             </div>}
         </nav>
