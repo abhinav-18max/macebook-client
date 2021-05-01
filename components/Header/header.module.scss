@@ -7,15 +7,18 @@
     padding: 1rem;
     background-color: $color-primary;
     color: $color-white;
-    
+    align-items: center;
+
     a{
         text-decoration: none;
+        cursor: pointer;
     }
 }
 
 .navbarNav{
     display: flex;
     flex-direction: row;
+    align-items: center;
     list-style-type: none;  
     padding: 0;
     margin: 0;
@@ -25,4 +28,9 @@
     &:not(:last-child){
         margin-right: 1rem;
     }
+}
+
+.picture{
+    border-radius: 50%;
+    height: 35px;
 }

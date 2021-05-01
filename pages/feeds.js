@@ -2,6 +2,7 @@ import Layout from '../components/Layout/layout'
 import SEO from '../components/seo'
 import Router from 'next/router'
 import styles from '../styles/pages/feeds.module.scss'
+import {clientRedirect, serverRedirect} from '../lib/redirect'
 
 const Feeds = ({feeds}) => {
     return(
@@ -21,13 +22,12 @@ Feeds.getInitialProps = async (ctx) => {
     })
     
     if(res.status === 401 && !ctx.req){
-        Router.replace('/login')
+        clientRedirect('/login')
         return {}
     }
 
     if(res.status === 401 && ctx.req){
-        ctx.res.writeHead(301, {Location: '/login'})
-        ctx.res.end()
+        serverRedirect(ctx, '/login')
         return {}
     }
     
