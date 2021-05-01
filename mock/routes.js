@@ -102,5 +102,28 @@ router.get('/logout', auth, (req, res) => {
   }))
   res.status(200).send()
 })
+router.post('/registration',(req,res)=>{
+  let newuserdetails =new user({
+      name:req.body.name,
+      username:req.body.username,
+      phone:req.body.phonenumber,
+      location:req.body.location,
+      email:req.body.email,
+      password:req.body.password
+     })
+  
+  
+  newuserdetails.save((err)=> {
+          if(err){
+              res.json({msg: 'failed to add details'});
+              console.log(err);
+              res.status(401).send()
+          }
+          else{
+              res.json({msg:'details added'});
+              res.status(200).send()
+          }
+      })
+  })
 
 module.exports = router
