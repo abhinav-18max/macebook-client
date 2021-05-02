@@ -1,7 +1,7 @@
 import Layout from '../components/Layout/layout'
 import SEO from '../components/seo'
-import Router from 'next/router'
 import styles from '../styles/pages/messaging.module.scss'
+import { clientRedirect, serverRedirect } from '../lib/redirect'
 
 const Messaging = ({messages}) => {
     return(
@@ -14,20 +14,23 @@ const Messaging = ({messages}) => {
 }
 
 Messaging.getInitialProps = async (ctx) => {
-    const res = await fetch(`${process.env.API}/messages`, {
+    return handleFetch(ctx, `${process.env.API}/messages`)
+}
+
+const handleFetch = async (ctx, route) => {
+    const res = await fetch(route, {
         method: 'GET',
         credentials: 'include',
         headers: ctx.req ? {cookie: ctx.req.headers.cookie} : undefined
     })
     
     if(res.status === 401 && !ctx.req){
-        Router.replace('/login')
+        clientRedirect('/login')
         return {}
     }
 
     if(res.status === 401 && ctx.req){
-        ctx.res.writeHead(301, {Location: '/login'})
-        ctx.res.end()
+        serverRedirect(ctx, '/login')
         return {}
     }
     
