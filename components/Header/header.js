@@ -42,6 +42,7 @@ const Header = () => {
             <div>
                 <ul className={styles.navbarNav}>
                     <li className={styles.navbarLink}><Link href="/login"><a>Login</a></Link></li>
+                    <li className={styles.navbarLink}><Link href="/registration"><a>Signup</a></Link></li>
                 </ul>
             </div>}
         </nav>
