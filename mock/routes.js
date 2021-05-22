@@ -3,6 +3,7 @@ const router = express.Router()
 const cookie = require('cookie')
 
 const auth = require('./auth')
+
 const {getUserData, generateToken} = require('./utils')
 
 const users = [
@@ -68,7 +69,7 @@ router.post('/login', (req, res) => {
         domain: 'localhost',
         expires: new Date(Date.now() + 6.048e+8)
     }))
-    res.status(200).json({username})
+    res.status(200).json({user})
 })
 
 router.get('/profile', auth, (req, res) => {
@@ -115,5 +116,29 @@ router.post('/registration',auth,(req,res)=>{
   
 
   })
+
+router.post('/registration',(req,res)=>{
+let newuserdetails =new user({
+    name:req.body.name,
+    username:req.body.username,
+    phone:req.body.phonenumber,
+    location:req.body.location,
+    email:req.body.email,
+    password:req.body.password
+   })
+
+
+newuserdetails.save((err)=> {
+        if(err){
+            res.json({msg: 'failed to add details'});
+            console.log(err);
+            res.status(401).send()
+        }
+        else{
+            res.json({msg:'details added'});
+            res.status(200).send()
+        }
+    })
+})
 
 module.exports = router

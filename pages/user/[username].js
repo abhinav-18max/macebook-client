@@ -1,6 +1,7 @@
 import {Router, useRouter} from 'next/router'
 import Layout from '../../components/Layout/layout'
 import SEO from '../../components/seo'
+import { clientRedirect, serverRedirect } from '../../lib/redirect'
 import styles from '../../styles/pages/profile.module.scss'
 
 const UserProfile = (props) => {
@@ -30,24 +31,22 @@ export async function getServerSideProps(ctx){
     })
 
     if(res.status === 401 && !ctx.req){
-        Router.replace('/login')
+        clientRedirect('/login')
         return {props:{}}
     }
 
     if(res.status === 401 && ctx.req){
-        ctx.res.writeHead(301, {Location: '/login'})
-        ctx.res.end()
+        serverRedirect('/login')
         return {props:{}}
     }
 
     if(res.status === 404 && !ctx.req){
-        Router.replace('/404')
+        clientRedirect('/404')
         return {props:{}}
     }
 
     if(res.status === 404 && ctx.req){
-        ctx.res.writeHead(301, {Location: '/404'})
-        ctx.res.end()
+        serverRedirect('/404')
         return {props:{}}
     }
     
