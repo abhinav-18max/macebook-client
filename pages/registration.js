@@ -1,7 +1,10 @@
 import { useFormik } from 'formik';
 import SEO from '../components/seo'
 import Layout from '../components/Layout/layout'
+import {useAuth} from '../contexts/authContext'
 import Router from 'next/router'
+import {useEffect} from "react";
+import {clientRedirect} from "../lib/redirect";
 
 const validate = values => {
     const errors = {};
@@ -32,11 +35,13 @@ const validate = values => {
     return errors;
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> e4fa264cef91731f78fb0574d54f5a3e7021e4eb
 const  SignupForm = () => {
+    const[user,setUser]=useAuth()
+
+    useEffect(()=>{
+        if(user) clientRedirect('/feeds')
+    },[user])
     const formik = useFormik({
         initialValues: {
             name: '',
@@ -57,11 +62,11 @@ const  SignupForm = () => {
                 body: JSON.stringify(values),
                 credentials: 'include'
             })
-            if(res.status == 200){
+
                 console.log("You're Logged In!")
                 localStorage.setItem('macebook-isauth', true)
                 return Router.replace('/feeds')
-            }
+
 
         },
 
