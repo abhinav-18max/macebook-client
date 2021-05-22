@@ -35,7 +35,6 @@ const validate = values => {
 }
 
 
-
 const  SignupForm = () => {
 
     const formik = useFormik({
@@ -51,14 +50,23 @@ const  SignupForm = () => {
 
         validate,
         onSubmit: values => {
-            console.warn(values)
+
+            console.warn(values.username)
             const res =  fetch(`${process.env.API}/registration`, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(values),
                 credentials: 'include'
             })
+            if(res.status == 200){
+                console.log("You're Logged In!")
+                localStorage.setItem('macebook-isauth', true)
+                return Router.replace('/feeds')
+            }
+
         },
+
+
     });
     return (
         <Layout>

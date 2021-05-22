@@ -89,7 +89,7 @@ router.get('/messages', auth, (req, res) => {
   res.status(200).json({test: "test"})
 })
 
-router.get('/notifications', auth, (req, res) => {
+router.get('/notifications', (req, res) => {
   res.status(200).json({test: "test"})
 })
 
@@ -102,7 +102,7 @@ router.get('/logout', auth, (req, res) => {
   }))
   res.status(200).send()
 })
-router.post('/registration',(req,res)=>{
+router.post('/registration',auth,(req,res)=>{
   let newuserdetails ={
       name:req.body.name,
       username:req.body.username,
@@ -112,7 +112,7 @@ router.post('/registration',(req,res)=>{
       password:req.body.password
      }
   
-  console.log(newuserdetails)
+  
 
   })
 
