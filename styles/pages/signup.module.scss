@@ -1,0 +1,478 @@
+.layout{
+    position: relative;
+    width: 622px;
+    height: 819px;
+    left: 409px;
+    top: 103px;
+    margin: 103px 409px 102px 409px;
+    background: #ffffff;
+    overflow: hidden;
+    .square{
+      position: absolute;
+      width: 622px;
+      height: 530.57px;
+      margin: 0px 0px 288.43px 0px;
+      background: #898989;
+      //z-index: 1;
+    }
+    .ellipse{
+      position: absolute;
+      width: 859px;
+      height: 727.58px;
+      //left: 1072px;
+      //top: 841px;
+      margin:10.42px -41px 81px -196px;
+      background:  #898989;
+      transform: rotate(-180deg);
+      //z-index: 1;
+      border-radius: 50%;
+    }
+    .for{
+        //z-index:2;
+        .title{
+          margin: 65px 134px 699px 133px;
+          position: absolute;
+          width: 355px;
+          height: 55px;
+          //left: 542px;
+          //top: 168px;
+
+          background: #C4C4C4;
+          .tex{
+          z-index: 2;
+            margin: 21px 142px 16px 143px;
+            position: absolute;
+            width: 70px;
+            height: 18px;
+            //left: 685px;
+            //top: 189px;
+
+            font-family: Roboto;
+            font-style: italic;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 18px;
+            /* identical to box height */
+
+
+            color: #414141;
+
+          }
+        }
+        .q1{
+          margin:141px 349px 657px 84px;
+          position: absolute;
+          width: 189px;
+          height: 21px;
+          //left: 493px;
+          //top: 244px;
+
+          background: #C4C4C4;
+          .text{
+            margin:4px 114px 1px 14px;
+            position: absolute;
+            width: 61px;
+            height: 18px;
+            //left: 507px;
+            //top: 248px;
+
+            font-family: Roboto;
+            font-style: italic;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 18px;
+            /* identical to box height */
+
+
+            color: #414141;
+
+          }
+        }
+
+        .op1{
+          margin:143px 84px 653px 316px;
+          position: absolute;
+          width: 222px;
+          height: 23px;
+          //left: 725px;
+          //top: 246px;
+
+          background: #DBDBDB;
+          .text{
+            margin: 2px 160px 3px 11px;
+            position: absolute;
+            width: 51px;
+            height: 18px;
+            //left: 736px;
+            //top: 248px;
+
+            font-family: Roboto;
+            font-style: italic;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 18px;
+            /* identical to box height */
+
+
+            color: #414141;
+
+          }
+        }
+        .op2{
+          margin:176px 84px 620px 316px;
+          position: absolute;
+          width: 222px;
+          height: 23px;
+          //left: 725px;
+          //top: 279px;
+
+          background: #DBDBDB;
+          .text{
+            margin: 2px 165px 3px 11px;
+            position: absolute;
+            width: 51px;
+            height: 18px;
+            //left: 736px;
+            //top: 248px;
+
+            font-family: Roboto;
+            font-style: italic;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 18px;
+            /* identical to box height */
+
+
+            color: #414141;
+
+          }
+        }
+        .rb1{
+          margin:144px 311px 657px 295px;
+          position: absolute;
+          width: 16px;
+          height: 18px;
+          //left: 704px;
+          //top: 247px;
+
+          background: #E4E4E4;
+        }
+        .rb2{
+          margin:178px 311px 623px 295px;
+          position: absolute;
+          width: 16px;
+          height: 18px;
+          //left: 704px;
+          //top: 281px;
+
+          background: #E4E4E4;
+        }
+      .detail1{
+        margin:220px 349px 578px 84px;
+        position: absolute;
+        width: 189px;
+        height: 21px;
+        //left: 493px;
+        //top: 323px;
+
+        background: #C4C4C4;
+        .text{
+          margin:1px 125px 2px 14px;
+          position: absolute;
+          width: 50px;
+          height: 18px;
+          //left: 507px;
+          //top: 324px;
+
+          font-family: Roboto;
+          font-style: italic;
+          font-weight: normal;
+          font-size: 15px;
+          line-height: 18px;
+          /* identical to box height */
+
+
+          color: #414141;
+
+        }
+      }
+        .entr1{
+          margin:255px 84px 541px 84px;
+          position: absolute;
+          input{
+
+            width: 454px;
+            height: 23px;
+            //left: 493px;
+            //top: 358px;
+
+            background: #DBDBDB;
+          }
+        }
+        .detail2{
+          margin:301px 349px 497px 84px;
+          position: absolute;
+          width: 189px;
+          height: 21px;
+          //left: 493px;
+          //top: 404px;
+
+          background: #C4C4C4;
+
+            .text{
+              margin:1px 125px 2px 14px;
+              position: absolute;
+              width: 50px;
+              height: 18px;
+              //left: 507px;
+              //top: 324px;
+
+              font-family: Roboto;
+              font-style: italic;
+              font-weight: normal;
+              font-size: 15px;
+              line-height: 18px;
+              /* identical to box height */
+
+
+              color: #414141;
+
+            }
+
+        }
+        .entr2{
+          margin:336px 84px 480px 84px;
+          position: absolute;
+          input{
+
+            width: 454px;
+            height: 23px;
+            //left: 493px;
+            //top: 358px;
+
+            background: #DBDBDB;
+          }
+        }
+        .detail3{
+          margin:384px 349px 414px 84px;
+          position:absolute;
+          width: 189px;
+          height: 21px;
+          //left: 493px;
+          //top: 404px;
+
+          background: #C4C4C4;
+
+          .text{
+            margin:1px 125px 2px 14px;
+            position: absolute;
+            width: 50px;
+            height: 18px;
+            //left: 507px;
+            //top: 324px;
+
+            font-family: Roboto;
+            font-style: italic;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 18px;
+            /* identical to box height */
+
+
+            color: #414141;
+
+          }
+
+        }
+        .entr3 {
+          margin: 419px 84px 377px 84px;
+          position: absolute;
+
+          input {
+
+            width: 454px;
+            height: 23px;
+            //left: 493px;
+            //top: 358px;
+
+            background: #DBDBDB;
+          }
+        }
+          .detail4 {
+            margin: 464px 349px 334px 84px;
+            position: absolute;
+            width: 189px;
+            height: 21px;
+            //left: 493px;
+            //top: 404px;
+
+            background: #C4C4C4;
+
+            .text {
+              margin: 1px 125px 2px 14px;
+              position: absolute;
+              width: 50px;
+              height: 18px;
+              //left: 507px;
+              //top: 324px;
+
+              font-family: Roboto;
+              font-style: italic;
+              font-weight: normal;
+              font-size: 15px;
+              line-height: 18px;
+              /* identical to box height */
+
+
+              color: #414141;
+
+            }
+
+          }
+
+          .entr4 {
+            margin: 499px 84px 297px 84px;
+            position: absolute;
+
+            input {
+
+              width: 454px;
+              height: 23px;
+              //left: 493px;
+              //top: 358px;
+
+              background: #DBDBDB;
+            }
+          }
+ .prf {
+   margin: 544px 349px 254px 84px;
+   position: absolute;
+   width: 189px;
+   height: 21px;
+   //left: 493px;
+   //top: 647px;
+.text{
+  position: absolute;
+  width: 91px;
+  height: 18px;
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+  /* identical to box height */
+
+
+  color: #414141;
+
+}
+   background: #C4C4C4;
+ }
+      .choose{
+        margin: 544px 201px 252px 295px;
+        position: absolute;
+        width: 126px;
+        height: 23px;
+        //left: 704px;
+        //top: 647px;
+
+        background: #DBDBDB;
+        .text{
+          position: absolute;
+          width: 94px;
+          height: 18px;
+          font-family: Roboto;
+          font-style: italic;
+          font-weight: normal;
+          font-size: 15px;
+          line-height: 18px;
+          /* identical to box height */
+
+
+          color: #414141;
+
+        }
+      }
+      .google{
+        margin:606px 156px  180px 155px  ;
+        position: absolute;
+      button{
+        width: 311px;
+        height: 33px;
+        //left: 564px;
+        //top: 709px;
+
+        background: #EBEBEB;
+        border-radius: 50px;
+
+
+
+          font-family: Roboto;
+          font-style: italic;
+          font-weight: normal;
+          font-size: 15px;
+          line-height: 18px;
+          /* identical to box height */
+
+
+          color: #414141;
+        }
+      }
+      .signup{
+        margin: 651px 201px 126px 201px;
+        position: absolute;
+      button{
+
+        width: 220px;
+        height: 42px;
+        //left: 610px;
+        //top: 754px;
+
+        background: #DBDBDB;
+        border-radius: 50px;
+
+
+
+          //margin: 13px 86px 11px 85px;
+          font-family: Roboto;
+          font-style: italic;
+          font-weight: normal;
+          font-size: 15px;
+          line-height: 18px;
+          /* identical to box height */
+
+
+          color: #414141;
+
+      }
+      }
+      .signin{
+        margin:749px 201px 28px 201px;
+        position: absolute;
+      button{
+        width: 220px;
+        height: 42px;
+        //left: 594px;
+        //top: 852px;
+
+        background: #DBDBDB;
+        border-radius: 50px;
+
+
+
+
+          font-family: Roboto;
+          font-style: italic;
+          font-weight: normal;
+          font-size: 15px;
+          line-height: 18px;
+          /* identical to box height */
+
+
+          color: #414141;
+
+      }
+      }
+        }}
+
+

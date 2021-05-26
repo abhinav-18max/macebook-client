@@ -1,0 +1,218 @@
+
+.layout {
+  margin: 125px 410px 80px 408px;
+
+  position: relative;
+  width: 622px;
+  height: 819px;
+  left: 408px;
+  top: 125px;
+
+  background: #ffffff;
+  overflow: hidden;
+  .title_box {
+    margin: 93px 133px 671px 134px;
+    position: absolute;
+    width: 355px;
+    height: 55px;
+    //left: 542px;
+    //top: 218px;
+
+    background: #C4C4C4;
+
+    .text {
+      position: absolute;
+      margin: 22px 122px 15px 122px;
+      width: 111px;
+      height: 18px;
+      //left: 664px;
+      //top: 240px;
+
+      font-family: Roboto;
+      font-style: italic;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 18px;
+      /* identical to box height */
+
+
+      color: #414141;
+    }
+
+  }
+
+  .label1 {
+    margin: 227px 348px 571px 85px;
+    position: absolute;
+    width: 189px;
+    height: 21px;
+    //left: 493px;
+    //top: 352px;
+
+    background: #C4C4C4;
+    .t1{
+      position: absolute;
+      width: 67px;
+      height: 18px;
+      //left: 499px;
+      //top: 352px;
+
+      font-family: Roboto;
+      font-style: italic;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 18px;
+      /* identical to box height */
+
+
+      color: #414141;
+    } }
+  .tex1{
+    margin: 262px 83px 524px 85px;
+    position: absolute;
+    input{
+
+      width: 454px;
+      height: 33px;
+
+      //left: 493px;
+      //top: 387px;
+
+      background: #DBDBDB;
+
+    }
+  }
+  .label2 {
+    margin: 354px 349px 444px 85px;
+    position: absolute;
+    width: 189px;
+    height: 21px;
+    //left: 493px;
+    //top: 352px;
+
+    background: #C4C4C4;
+    .t2{
+      position: absolute;
+      width: 67px;
+      height: 18px;
+      //left: 499px;
+      //top: 352px;
+
+      font-family: Roboto;
+      font-style: italic;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 18px;
+      /* identical to box height */
+
+
+      color: #414141;
+    } }
+  .tex2{
+    margin: 389px 84px 397px 84px;
+    position: absolute;
+    input{
+
+      width: 454px;
+      height: 33px;
+
+      //left: 493px;
+      //top: 387px;
+
+      background: #DBDBDB;
+
+    }
+  }
+  .forgot{
+    margin:429px 74px 372px 437px;
+    position: absolute;
+    width: 111px;
+    height: 18px;
+    //left: 845px;
+    //top: 554px;
+
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    /* identical to box height */
+
+
+    color: #414141;
+
+  }
+  .sign{
+    button{
+      margin: 466px 200px 311px 202px;
+      position: absolute;
+      width: 220px;
+      height: 42px;
+      //left: 610px;
+      //top: 591px;
+
+      background: #DBDBDB;
+      border-radius: 50px;
+
+      font-family: Roboto;
+      font-style: italic;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 18px;
+      /* identical to box height */
+
+
+      color: #414141;
+    }
+
+  }
+  .signgoogle{
+
+    button{
+      position: absolute;
+      width: 311px;
+      height: 33px;
+      //left: 564px;
+      //top: 661px;
+      margin: 536px 155px 250px 156px;
+      background: #EBEBEB;
+      border-radius: 50px;
+      font-family: Roboto;
+      font-style: italic;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 18px;
+      /* identical to box height */
+
+
+      color: #414141;
+
+    }
+  }
+  .ellipse{
+    position: absolute;
+    width: 859px;
+    height: 698px;
+    border-radius: 50%;
+    margin: 623px -196px -499px -41px;
+    z-index: 1;
+    background: #898989;
+
+
+  }
+  .signup{
+
+    button {
+      position: absolute;
+      width: 220px;
+      height: 42px;
+      //left: 610px;
+      //top: 823px;
+      z-index: 2;
+      margin: 698px 200px 79px 202px;
+      background: #DBDBDB;
+      border-radius: 50px;
+    }
+  }
+
+}

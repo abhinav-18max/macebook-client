@@ -1,8 +1,11 @@
 import {useState, useEffect} from 'react'
 import SEO from '../components/seo'
 import Layout from '../components/Layout/layout'
+import Sign_in from '../styles/pages/login.module.scss'
 import {useAuth} from '../contexts/authContext'
 import {clientRedirect, serverRedirect} from '../lib/redirect'
+import Link from "next/link";
+
 
 const Login = () => {
     const [username, updateUsername] = useState("charlotteli")
@@ -46,22 +49,24 @@ const Login = () => {
     }
 
     return(
-        <Layout>
-            <SEO title="Login | Macebook"/>
-            <h1>Login</h1>
-            <form>
-                <div>
-                    <label htmlFor="username">Username</label>
-                    <input name="username" type="text" onChange={handleChange} value={username}/>
-                </div>
-                <div>
-                    <label htmlFor="password">Password</label>
-                    <input name="password" type="password" onChange={handleChange} value={password}/>
-                </div>
-                <button type="submit" onClick={handleClick}>Submit</button>
-            </form>
-        </Layout>
-    )
+
+        <div className={Sign_in.layout}>
+            <SEO title ="Login | Macebook"/>
+            <div className={Sign_in.title_box}><div className={Sign_in.text}>Welcome Back</div></div>
+            <div className={Sign_in.label1}><div className={Sign_in.t1}>Username</div></div>
+            <div className={Sign_in.tex1}><input name="username" type="text" onChange={handleChange} value={username}/></div>
+            <div className={Sign_in.label2}><div className={Sign_in.t2}>Password</div></div>
+            <div className={Sign_in.tex2}><input name="password" type="password" onChange={handleChange} value={password}/></div>
+            <div className={Sign_in.forgot}><a>Forgot Password</a></div>
+            <div className={Sign_in.sign}><button type="submit" onClick={handleClick}>Submit</button></div>
+            <div className={Sign_in.signgoogle}><button>Sign in using google</button></div>
+            <div className={Sign_in.ellipse}> </div>
+            <div className={Sign_in.signup}><button> <Link href="/signup"><a>Signup</a></Link></button></div>
+
+
+
+        </div>
+                  )
 }
 
 Login.getInitialProps = async (ctx) => {
