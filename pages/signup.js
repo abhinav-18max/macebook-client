@@ -135,7 +135,7 @@ const  SignupForm = () => {
                 <div className={styles.signup}><button type="submit"><div className={styles.text} Sign up>Sign Up</div></button></div>
 
             </form>
-                <div className={styles.signin}><button type="submit"><Link href="/login"><a>Sign Up</a></Link></button></div>
+                <div className={styles.signin}><button type="submit"><Link href="/login"><a>Sign IN</a></Link></button></div>
             </div>
         </div>
     );
